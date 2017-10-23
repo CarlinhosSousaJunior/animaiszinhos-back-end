@@ -245,6 +245,7 @@
     <Compile Include="Bundles\Pessoas\Controller\CidadeController.cs" />
     <Compile Include="Bundles\Pessoas\Controller\EnderecoController.cs" />
     <Compile Include="Bundles\Pessoas\Controller\EstadoController.cs" />
+    <Compile Include="Bundles\Pessoas\Controller\FotoController.cs" />
     <Compile Include="Bundles\Pessoas\Controller\PaisController.cs" />
     <Compile Include="Bundles\Pessoas\Controller\PessoaController.cs" />
     <Compile Include="Bundles\Pessoas\Controller\TelefoneController.cs" />
@@ -271,6 +272,22 @@
     <Compile Include="Migrations\201710231829452_AnyMigration.cs" />
     <Compile Include="Migrations\201710231829452_AnyMigration.Designer.cs">
       <DependentUpon>201710231829452_AnyMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710232151514_FotoSemNome.cs" />
+    <Compile Include="Migrations\201710232151514_FotoSemNome.Designer.cs">
+      <DependentUpon>201710232151514_FotoSemNome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710232202235_FotoContextAdicionada.cs" />
+    <Compile Include="Migrations\201710232202235_FotoContextAdicionada.Designer.cs">
+      <DependentUpon>201710232202235_FotoContextAdicionada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710232206019_FotoAbstractEntity.cs" />
+    <Compile Include="Migrations\201710232206019_FotoAbstractEntity.Designer.cs">
+      <DependentUpon>201710232206019_FotoAbstractEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710232336208_FotoTipo.cs" />
+    <Compile Include="Migrations\201710232336208_FotoTipo.Designer.cs">
+      <DependentUpon>201710232336208_FotoTipo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -316,6 +333,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201710231829452_AnyMigration.resx">
       <DependentUpon>201710231829452_AnyMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710232151514_FotoSemNome.resx">
+      <DependentUpon>201710232151514_FotoSemNome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710232202235_FotoContextAdicionada.resx">
+      <DependentUpon>201710232202235_FotoContextAdicionada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710232206019_FotoAbstractEntity.resx">
+      <DependentUpon>201710232206019_FotoAbstractEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710232336208_FotoTipo.resx">
+      <DependentUpon>201710232336208_FotoTipo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

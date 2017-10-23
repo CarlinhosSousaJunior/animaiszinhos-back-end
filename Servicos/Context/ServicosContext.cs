@@ -23,6 +23,7 @@ namespace Servicos.Context
         public IDbSet<Endereco> Enderecos { get; set; }
         public IDbSet<Estado> Estados { get; set; }
         public IDbSet<Fornecedor> Fornecedores { get; set; }
+        public IDbSet<Foto> Fotos { get; set; }
         public IDbSet<Pais> Paises { get; set; }
         public IDbSet<Pessoa> Pessoas { get; set; }
         public IDbSet<Telefone> Telefones { get; set; }

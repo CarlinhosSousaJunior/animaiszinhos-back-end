@@ -6,6 +6,9 @@ using System.Net.Http;
 using System.Web.Http;
 using Servicos.Bundles.Core.Repository;
 using Servicos.Bundles.Animais.Entity;
+using Servicos.Bundles.Pessoas.Entity;
+using System.Web;
+using System.IO;
 
 namespace Servicos.Bundles.Animais.Controller
 {
@@ -30,7 +33,7 @@ namespace Servicos.Bundles.Animais.Controller
             _repository.Commit();
 
             return Request.CreateResponse(HttpStatusCode.OK, doacao);
-        }
+        }        
 
         [HttpGet]
         public HttpResponseMessage GetAll()

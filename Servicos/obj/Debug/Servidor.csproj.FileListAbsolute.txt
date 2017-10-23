@@ -146,3 +146,7 @@ C:\Users\rudsonm\Source\Repos\animaiszinhos-back-end\Servicos\bin\System.Web.Opt
 C:\Users\rudsonm\Source\Repos\animaiszinhos-back-end\Servicos\bin\Antlr3.Runtime.pdb
 C:\Users\rudsonm\Source\Repos\animaiszinhos-back-end\Servicos\obj\Debug\Servicos.Migrations.AnyMigration.resources
 C:\Users\rudsonm\Source\Repos\animaiszinhos-back-end\Servicos\obj\Debug\Servidor.csproj.GenerateResource.Cache
+C:\Users\rudsonm\Source\Repos\animaiszinhos-back-end\Servicos\obj\Debug\Servicos.Migrations.FotoSemNome.resources
+C:\Users\rudsonm\Source\Repos\animaiszinhos-back-end\Servicos\obj\Debug\Servicos.Migrations.FotoContextAdicionada.resources
+C:\Users\rudsonm\Source\Repos\animaiszinhos-back-end\Servicos\obj\Debug\Servicos.Migrations.FotoAbstractEntity.resources
+C:\Users\rudsonm\Source\Repos\animaiszinhos-back-end\Servicos\obj\Debug\Servicos.Migrations.FotoTipo.resources

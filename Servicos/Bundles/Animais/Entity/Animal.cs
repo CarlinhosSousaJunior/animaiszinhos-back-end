@@ -13,6 +13,6 @@ namespace Servicos.Bundles.Animais.Entity
         public string Filo { get; set; }
         public string Descricao { get; set; }
         public DateTime DataNascimento { get; set; }
-        public virtual List<Foto> Fotos { get; set; }
+        public virtual List<int> Fotos { get; set; }
     }
 }
