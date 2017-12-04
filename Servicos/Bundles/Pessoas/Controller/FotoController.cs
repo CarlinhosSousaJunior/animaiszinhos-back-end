@@ -40,10 +40,12 @@ namespace Servicos.Bundles.Pessoas.Controller
         }
 
         [HttpPost]
-        public List<int> UploadImage()
+        public HttpResponseMessage UploadImage()
         {
             List<int> ids = new List<int>();
             var files = HttpContext.Current.Request.Files;
+            if (files.Count == 0)
+                return Request.CreateResponse(HttpStatusCode.NoContent, "Nenhum arquivo foi enviado");
             for (int i = 0; i < files.Count; i++)
             {                
                 MemoryStream ms = new MemoryStream();
@@ -53,7 +55,7 @@ namespace Servicos.Bundles.Pessoas.Controller
                 _repository.Commit();
                 ids.Add(foto.Id);
             }
-            return ids;
+            return Request.CreateResponse(HttpStatusCode.OK, ids);
         }
 
         [HttpDelete]

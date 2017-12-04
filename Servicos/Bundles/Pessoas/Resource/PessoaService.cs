@@ -18,13 +18,16 @@ namespace Servicos.Bundles.Pessoas.Resource
 
         }
 
-        public IEnumerable<Pessoa> GetAll(string nome, string cpfCnpj)
+        public IEnumerable<Pessoa> GetAll(string nome, string cpfCnpj, string email)
         {
             if(!string.IsNullOrWhiteSpace(nome))
                 base._parameters.Add(e => e.Nome.Contains(nome));
 
             if(!string.IsNullOrWhiteSpace(cpfCnpj))
                 base._parameters.Add(e => e.CpfCnpj.Equals(cpfCnpj));
+
+            if (!string.IsNullOrWhiteSpace(email))
+                base._parameters.Add(e => e.Email.Equals(email));
 
             return base.GetAll();
         }

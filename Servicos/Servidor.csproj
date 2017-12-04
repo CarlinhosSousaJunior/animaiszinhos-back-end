@@ -231,9 +231,13 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Bundles\Animais\Controller\ComentarioController.cs" />
     <Compile Include="Bundles\Animais\Controller\DoacaoController.cs" />
+    <Compile Include="Bundles\Animais\Controller\SolicitacaoAdocaoController.cs" />
     <Compile Include="Bundles\Animais\Entity\Animal.cs" />
+    <Compile Include="Bundles\Animais\Entity\Comentario.cs" />
     <Compile Include="Bundles\Animais\Entity\Doacao.cs" />
+    <Compile Include="Bundles\Animais\Entity\SolicitacaoAdocao.cs" />
     <Compile Include="Bundles\Core\Authentication\SimpleAuthorizationServerProvider.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="Bundles\Core\Exception\LoginSenhaIncorretaException.cs" />
@@ -288,6 +292,26 @@
     <Compile Include="Migrations\201710232336208_FotoTipo.cs" />
     <Compile Include="Migrations\201710232336208_FotoTipo.Designer.cs">
       <DependentUpon>201710232336208_FotoTipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711271904235_SolicitacaoAdocao&amp;Filo.cs" />
+    <Compile Include="Migrations\201711271904235_SolicitacaoAdocao&amp;Filo.Designer.cs">
+      <DependentUpon>201711271904235_SolicitacaoAdocao&amp;Filo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711272000321_AnimalEspeciePeso.cs" />
+    <Compile Include="Migrations\201711272000321_AnimalEspeciePeso.Designer.cs">
+      <DependentUpon>201711272000321_AnimalEspeciePeso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711272305319_SolicitacaoAdocao.cs" />
+    <Compile Include="Migrations\201711272305319_SolicitacaoAdocao.Designer.cs">
+      <DependentUpon>201711272305319_SolicitacaoAdocao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711272334101_ComentarioDoacao.cs" />
+    <Compile Include="Migrations\201711272334101_ComentarioDoacao.Designer.cs">
+      <DependentUpon>201711272334101_ComentarioDoacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712041842328_EnumMigration.cs" />
+    <Compile Include="Migrations\201712041842328_EnumMigration.Designer.cs">
+      <DependentUpon>201712041842328_EnumMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -345,6 +369,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710232336208_FotoTipo.resx">
       <DependentUpon>201710232336208_FotoTipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711271904235_SolicitacaoAdocao&amp;Filo.resx">
+      <DependentUpon>201711271904235_SolicitacaoAdocao&amp;Filo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711272000321_AnimalEspeciePeso.resx">
+      <DependentUpon>201711272000321_AnimalEspeciePeso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711272305319_SolicitacaoAdocao.resx">
+      <DependentUpon>201711272305319_SolicitacaoAdocao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711272334101_ComentarioDoacao.resx">
+      <DependentUpon>201711272334101_ComentarioDoacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712041842328_EnumMigration.resx">
+      <DependentUpon>201712041842328_EnumMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

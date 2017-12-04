@@ -1,16 +1,12 @@
-﻿using Servicos.Bundles.Core;
-using Servicos.Bundles.Pessoas.Entity;
+﻿using Servicos.Bundles.Pessoas.Entity;
 using Servicos.Bundles.Pessoas.Resource;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
 namespace Servicos.Bundles.Pessoas.Controller
 {
-    [Authorize]
     [Route("api/usuarios")]
     public class UsuarioController : ApiController
     {
@@ -22,9 +18,9 @@ namespace Servicos.Bundles.Pessoas.Controller
         }
 
         [HttpGet]
-        public HttpResponseMessage GetAll(string username = "", string password = "", string cpf = "")
+        public HttpResponseMessage GetAll(string username = "", string password = "", string cpf = "", string email = "")
         {
-            IEnumerable<Usuario> usuarios = _service.GetAll(username, password, cpf);
+            IEnumerable<Usuario> usuarios = _service.GetAll(username, password, cpf, email);
             return Request.CreateResponse(HttpStatusCode.OK, usuarios);
         }
 

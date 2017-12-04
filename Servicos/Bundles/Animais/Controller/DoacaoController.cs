@@ -23,16 +23,17 @@ namespace Servicos.Bundles.Animais.Controller
         }
 
         [HttpPost]
-        public HttpResponseMessage Post(Animal animal)
+        public HttpResponseMessage Post(Doacao doacao)
         {
+            Animal animal = doacao.Animal;
             _repository.Add<Animal>(animal);
             _repository.Commit();
 
-            Doacao doacao = new Doacao(animal);
+            Doacao novaDoacao = new Doacao(animal, doacao.Usuario);
             _repository.Add<Doacao>(doacao);
             _repository.Commit();
 
-            return Request.CreateResponse(HttpStatusCode.OK, doacao);
+            return Request.CreateResponse(HttpStatusCode.OK, novaDoacao);
         }        
 
         [HttpGet]
@@ -41,5 +42,16 @@ namespace Servicos.Bundles.Animais.Controller
             IEnumerable<Doacao> doacoes = _repository.GetAll<Doacao>();
             return Request.CreateResponse(HttpStatusCode.OK, doacoes);
         }
+        
+        [HttpGet]
+        [Route("api/doacoes/{id}")]
+        public HttpResponseMessage GetOne(int id)
+        {
+            Doacao doacao = _repository.GetOne<Doacao>(id);
+            if (doacao == null)
+                return Request.CreateResponse(HttpStatusCode.NotFound, "Nenhum usuário encontrado");
+            else
+                return Request.CreateResponse(HttpStatusCode.OK, doacao);
+        }        
     }
 }

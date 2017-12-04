@@ -27,7 +27,7 @@ namespace Servicos.Bundles.Core.Authentication
 
             IRepository repository = new AbstractEditableEntityRepository(new ServicosContext());
             UsuarioService usuarioService = new UsuarioService(repository);
-            var usuario = usuarioService.GetAll(context.UserName, context.Password).FirstOrDefault();            
+            var usuario = usuarioService.GetAll(context.UserName, context.Password).FirstOrDefault();
             if (usuario == null)
             {
                 context.SetError("invalid_grant", new LoginSenhaIncorretaException().Message);

@@ -32,5 +32,7 @@ namespace Servicos.Context
         /* Animal Bundle */
         public IDbSet<Animal> Animais { get; set; }
         public IDbSet<Doacao> Doacoes { get; set; }
+        public IDbSet<Comentario> Comentarios { get; set; }
+        public IDbSet<SolicitacaoAdocao> SolicitacoesAdocao { get; set; }
     }
 }

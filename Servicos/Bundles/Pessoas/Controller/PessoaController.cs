@@ -23,9 +23,9 @@ namespace Servicos.Bundles.Pessoas.Controller
         }
 
         [HttpGet]
-        public HttpResponseMessage Get(string nome = "", string cpfCnpj = "")
+        public HttpResponseMessage Get(string nome = "", string cpfCnpj = "", string email = "")
         {
-            IEnumerable<Pessoa> pessoas = _service.GetAll(nome, cpfCnpj);
+            IEnumerable<Pessoa> pessoas = _service.GetAll(nome, cpfCnpj, email);
             return Request.CreateResponse(HttpStatusCode.OK, pessoas);
         }
 
