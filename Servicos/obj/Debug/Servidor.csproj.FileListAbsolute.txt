@@ -155,3 +155,4 @@ C:\Users\rudsonm\Source\Repos\animaiszinhos-back-end\Servicos\obj\Debug\Servicos
 C:\Users\rudsonm\Source\Repos\animaiszinhos-back-end\Servicos\obj\Debug\Servicos.Migrations.SolicitacaoAdocao.resources
 C:\Users\rudsonm\Source\Repos\animaiszinhos-back-end\Servicos\obj\Debug\Servicos.Migrations.ComentarioDoacao.resources
 C:\Users\rudsonm\Source\Repos\animaiszinhos-back-end\Servicos\obj\Debug\Servicos.Migrations.EnumMigration.resources
+C:\Users\rudsonm\Source\Repos\animaiszinhos-back-end\Servicos\obj\Debug\Servicos.Migrations.FotoAnimal.resources

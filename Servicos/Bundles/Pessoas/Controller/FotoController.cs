@@ -1,14 +1,12 @@
-﻿using Servicos.Bundles.Core.Repository;
+﻿using Servicos.Bundles.Animais.Entity;
+using Servicos.Bundles.Core.Repository;
 using Servicos.Bundles.Pessoas.Entity;
 using Servicos.Context;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 
@@ -42,20 +40,20 @@ namespace Servicos.Bundles.Pessoas.Controller
         [HttpPost]
         public HttpResponseMessage UploadImage()
         {
-            List<int> ids = new List<int>();
-            var files = HttpContext.Current.Request.Files;
+            var files = HttpContext.Current.Request.Files;            
             if (files.Count == 0)
-                return Request.CreateResponse(HttpStatusCode.NoContent, "Nenhum arquivo foi enviado");
+                return Request.CreateResponse(HttpStatusCode.NoContent, "Nenhum arquivo foi enviado");            
+            int id = Int32.Parse(HttpContext.Current.Request.Params["Entidade"].ToString());
+            Animal animal = this._repository.GetOne<Animal>(id);            
             for (int i = 0; i < files.Count; i++)
             {                
                 MemoryStream ms = new MemoryStream();
                 files[i].InputStream.CopyTo(ms);
-                Foto foto = new Foto(ms.ToArray(), files[i].ContentType);
-                _repository.Add<Foto>(foto);
-                _repository.Commit();
-                ids.Add(foto.Id);
+                Foto foto = new Foto(animal, ms.ToArray(), files[i].ContentType);
+                _repository.Add<Foto>(foto);                
             }
-            return Request.CreateResponse(HttpStatusCode.OK, ids);
+            _repository.Commit();
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
 
         [HttpDelete]

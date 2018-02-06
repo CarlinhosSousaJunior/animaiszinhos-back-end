@@ -1,13 +1,10 @@
 ﻿using Servicos.Bundles.Core.Entity;
 using Servicos.Context;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Reflection;
-using System.Web;
 
 namespace Servicos.Bundles.Core.Repository
 {

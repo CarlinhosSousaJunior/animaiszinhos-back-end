@@ -14,6 +14,12 @@ namespace Servicos.Bundles.Core.Entity
             Ativo = true;            
         }
 
+        public AbstractEntity(int id)
+        {
+            this.Id = id;
+            this.Ativo = true;
+        }
+
         [Key]
         public int Id { get; set; }
         public bool Ativo { get; set; }

@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Servicos.Bundles.Core.Repository;
 using Servicos.Bundles.Animais.Entity;
-using Servicos.Bundles.Pessoas.Entity;
-using System.Web;
-using System.IO;
 
 namespace Servicos.Bundles.Animais.Controller
 {

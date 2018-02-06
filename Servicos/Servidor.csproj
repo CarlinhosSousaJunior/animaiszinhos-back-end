@@ -313,6 +313,10 @@
     <Compile Include="Migrations\201712041842328_EnumMigration.Designer.cs">
       <DependentUpon>201712041842328_EnumMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712200214488_FotoAnimal.cs" />
+    <Compile Include="Migrations\201712200214488_FotoAnimal.Designer.cs">
+      <DependentUpon>201712200214488_FotoAnimal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Bundles\Core\Repository\IRepository.cs" />
@@ -384,6 +388,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712041842328_EnumMigration.resx">
       <DependentUpon>201712041842328_EnumMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712200214488_FotoAnimal.resx">
+      <DependentUpon>201712200214488_FotoAnimal.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
