@@ -26,7 +26,8 @@ namespace Servicos.App_Start
             container.Register<PessoaService, PessoaService>();
             container.Register<TelefoneService, TelefoneService>();
             container.Register<UsuarioService, UsuarioService>();
-            //container.Verify();
+
+            container.Verify();
 
             return container;
         }

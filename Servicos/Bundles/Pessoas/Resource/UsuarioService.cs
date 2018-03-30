@@ -13,7 +13,7 @@ namespace Servicos.Bundles.Pessoas.Resource
 
         }
 
-        public IEnumerable<Usuario> GetAll(string login, string senha, string cpf = "", string email = "") {
+        public IEnumerable<Usuario> GetAll(string login, string senha, string cpf = "", string email = "") {            
             if (!string.IsNullOrWhiteSpace(login))
                 _parameters.Add(u => u.Email.Equals(login));
             if (!string.IsNullOrWhiteSpace(senha))

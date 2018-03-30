@@ -9,6 +9,16 @@ namespace Servicos.Bundles.Pessoas.Entity
 {
     public class Estado
     {
+        public Estado()
+        {
+
+        }
+
+        public Estado(string nome)
+        {
+            this.Nome = nome;
+        }
+
         [Key]
         public int Id { get; set; }
         public string Nome { get; set; }

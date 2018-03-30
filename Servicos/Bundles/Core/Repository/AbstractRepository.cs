@@ -1,4 +1,5 @@
 ﻿using Servicos.Bundles.Core.Entity;
+using Servicos.Context;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -9,8 +10,8 @@ namespace Servicos.Bundles.Core.Repository
 {
     public class AbstractRepository
     {
-        private DbContext _dbContext;       
-        public AbstractRepository(DbContext dbContext)
+        private ServicosContext _dbContext;       
+        public AbstractRepository(ServicosContext dbContext)
         {
             _dbContext = dbContext;
         }
