@@ -39,5 +39,22 @@ namespace Servicos.Bundles.Pessoas.Controller
             _service.Add(usuario);
             return Request.CreateResponse(HttpStatusCode.OK, usuario);
         }
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("api/usuarios/recuperarsenha/{id}")]
+        public HttpResponseMessage RecuperarSenha(int id)
+        {
+            try
+            {
+                _service.EnviarEmailRecuperacaoSenha(id);
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (System.Exception e)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, e.Message);
+            }
+
+        }
     }
 }

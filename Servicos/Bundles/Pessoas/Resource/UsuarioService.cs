@@ -1,14 +1,15 @@
 ﻿using Servicos.Bundles.Core.Repository;
 using Servicos.Bundles.Core.Resource;
 using Servicos.Bundles.Pessoas.Entity;
+using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace Servicos.Bundles.Pessoas.Resource
 {
     public class UsuarioService : AbstractService<Usuario>
     {
-        public UsuarioService(IRepository repository)
-            : base(repository)
+        public UsuarioService(IRepository repository) : base(repository)
         {
 
         }
@@ -23,9 +24,27 @@ namespace Servicos.Bundles.Pessoas.Resource
             if (!string.IsNullOrWhiteSpace(email))
                 base._parameters.Add(e => e.Email.Equals(email));
 
-            IEnumerable<Usuario> usuarios = base.GetAll();            
+            return base.GetAll();
+        }
 
-            return usuarios;
+        public void EnviarEmailRecuperacaoSenha(int id)
+        {
+            Usuario usuario = this.GetOne(id);
+            
+            usuario.Senha = new Random().Next().ToString();
+            this.Update(usuario);
+
+            StringBuilder strBuilder = new StringBuilder();
+            strBuilder.Append($"Para acessar o sistema aniamiszinhos utilize a senha {usuario.Senha}. ");
+            strBuilder.AppendLine("Não esqueça de alterar sua senha após o login");
+            try
+            {
+                EnviadorEmail.Enviar(usuario.Email, "Recuperação de senha Animaiszinhos", strBuilder.ToString());
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
     }
 }
