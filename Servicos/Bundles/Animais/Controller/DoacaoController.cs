@@ -10,7 +10,7 @@ using Servicos.Bundles.Animais.Resource;
 namespace Servicos.Bundles.Animais.Controller
 {
     [Route("api/doacoes")]
-    public class DoacaoController : ApiController, IRestController<Doacao>
+    public class DoacaoController : ApiController
     {
         private readonly DoacaoService _service;
 
@@ -29,13 +29,6 @@ namespace Servicos.Bundles.Animais.Controller
             _service.Add(doacao);
 
             return Request.CreateResponse(HttpStatusCode.OK, novaDoacao);
-        }
-
-        [HttpGet]
-        public HttpResponseMessage Get()
-        {
-            IEnumerable<Doacao> doacoes = _service.GetAll();
-            return Request.CreateResponse(HttpStatusCode.OK, doacoes);
         }
 
         [HttpGet]
