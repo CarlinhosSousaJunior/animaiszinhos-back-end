@@ -47,7 +47,8 @@ namespace Servicos.Bundles.Animais.Controller
             if(solicitacaoAdocao.Status != SolicitacaoAdocaoStatus.PENDENTE)
             {
                 Doacao doacao = _repository.GetOne<Doacao>(solicitacaoAdocao.Doacao.Id);
-                doacao.Status = DoacaoStatus.FINALIZADO;
+                //doacao.Status = DoacaoStatus.FINALIZADO;
+                doacao.Status = "FINALIZADO";
                 _repository.Update(doacao);
             }
             _repository.Commit();

@@ -4,37 +4,44 @@ using System.Net.Http;
 using System.Web.Http;
 using Servicos.Bundles.Core.Repository;
 using Servicos.Bundles.Animais.Entity;
+using Servicos.Bundles.Core.Resource;
+using Servicos.Bundles.Animais.Resource;
 
 namespace Servicos.Bundles.Animais.Controller
 {
     [Route("api/doacoes")]
-    public class DoacaoController : ApiController
+    public class DoacaoController : ApiController, IRestController<Doacao>
     {
-        private readonly IRepository _repository;
+        private readonly DoacaoService _service;
 
-        public DoacaoController(IRepository repository)
+        public DoacaoController(DoacaoService service)
         {
-            _repository = repository;
+            _service = service;
         }
 
         [HttpPost]
         public HttpResponseMessage Post(Doacao doacao)
         {
             Animal animal = doacao.Animal;
-            _repository.Add<Animal>(animal);
-            _repository.Commit();
+            _service.Add(doacao);
 
             Doacao novaDoacao = new Doacao(animal, doacao.Usuario);
-            _repository.Add<Doacao>(doacao);
-            _repository.Commit();
+            _service.Add(doacao);
 
             return Request.CreateResponse(HttpStatusCode.OK, novaDoacao);
-        }        
+        }
 
         [HttpGet]
-        public HttpResponseMessage GetAll()
+        public HttpResponseMessage Get()
         {
-            IEnumerable<Doacao> doacoes = _repository.GetAll<Doacao>();
+            IEnumerable<Doacao> doacoes = _service.GetAll();
+            return Request.CreateResponse(HttpStatusCode.OK, doacoes);
+        }
+
+        [HttpGet]
+        public HttpResponseMessage Get(string status = "")
+        {
+            IEnumerable<Doacao> doacoes = _service.Get(status);
             return Request.CreateResponse(HttpStatusCode.OK, doacoes);
         }
         
@@ -42,11 +49,26 @@ namespace Servicos.Bundles.Animais.Controller
         [Route("api/doacoes/{id}")]
         public HttpResponseMessage GetOne(int id)
         {
-            Doacao doacao = _repository.GetOne<Doacao>(id);
+            Doacao doacao = _service.GetOne(id);
             if (doacao == null)
-                return Request.CreateResponse(HttpStatusCode.NotFound, "Nenhum usuário encontrado");
-            else
-                return Request.CreateResponse(HttpStatusCode.OK, doacao);
-        }        
+                return Request.CreateResponse(HttpStatusCode.NotFound, "Nenhuma doação encontrada.");
+
+            return Request.CreateResponse(HttpStatusCode.OK, doacao);
+        }
+
+        [HttpPut]
+        [Route("api/doacoes/{id}")]
+        public HttpResponseMessage Put(int id, [FromBody] Doacao doacao)
+        {
+            _service.Update(doacao);
+            return Request.CreateResponse(HttpStatusCode.OK, doacao);
+        }
+
+        [HttpDelete]
+        public HttpResponseMessage Delete(int id)
+        {
+            _service.Remove(id);
+            return Request.CreateResponse(HttpStatusCode.OK);
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Servicos.Bundles.Core.Resource
 {
-    public interface IController<T>
+    public interface IService<T>
     {
         T Add(T entity);
         void Update(T entity);
