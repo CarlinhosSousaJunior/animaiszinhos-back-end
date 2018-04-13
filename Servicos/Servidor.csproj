@@ -246,6 +246,7 @@
     <Compile Include="Bundles\Core\Repository\AbstractRepository.cs" />
     <Compile Include="Bundles\Core\Resource\IService.cs" />
     <Compile Include="Bundles\Core\Exception\SenhaExpiradaException.cs" />
+    <Compile Include="Bundles\EnviadorEmail.cs" />
     <Compile Include="Bundles\Pessoas\Controller\CidadeController.cs" />
     <Compile Include="Bundles\Pessoas\Controller\EnderecoController.cs" />
     <Compile Include="Bundles\Pessoas\Controller\EstadoController.cs" />
@@ -273,49 +274,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710231829452_AnyMigration.cs" />
-    <Compile Include="Migrations\201710231829452_AnyMigration.Designer.cs">
-      <DependentUpon>201710231829452_AnyMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710232151514_FotoSemNome.cs" />
-    <Compile Include="Migrations\201710232151514_FotoSemNome.Designer.cs">
-      <DependentUpon>201710232151514_FotoSemNome.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710232202235_FotoContextAdicionada.cs" />
-    <Compile Include="Migrations\201710232202235_FotoContextAdicionada.Designer.cs">
-      <DependentUpon>201710232202235_FotoContextAdicionada.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710232206019_FotoAbstractEntity.cs" />
-    <Compile Include="Migrations\201710232206019_FotoAbstractEntity.Designer.cs">
-      <DependentUpon>201710232206019_FotoAbstractEntity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710232336208_FotoTipo.cs" />
-    <Compile Include="Migrations\201710232336208_FotoTipo.Designer.cs">
-      <DependentUpon>201710232336208_FotoTipo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711271904235_SolicitacaoAdocao&amp;Filo.cs" />
-    <Compile Include="Migrations\201711271904235_SolicitacaoAdocao&amp;Filo.Designer.cs">
-      <DependentUpon>201711271904235_SolicitacaoAdocao&amp;Filo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711272000321_AnimalEspeciePeso.cs" />
-    <Compile Include="Migrations\201711272000321_AnimalEspeciePeso.Designer.cs">
-      <DependentUpon>201711272000321_AnimalEspeciePeso.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711272305319_SolicitacaoAdocao.cs" />
-    <Compile Include="Migrations\201711272305319_SolicitacaoAdocao.Designer.cs">
-      <DependentUpon>201711272305319_SolicitacaoAdocao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711272334101_ComentarioDoacao.cs" />
-    <Compile Include="Migrations\201711272334101_ComentarioDoacao.Designer.cs">
-      <DependentUpon>201711272334101_ComentarioDoacao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712041842328_EnumMigration.cs" />
-    <Compile Include="Migrations\201712041842328_EnumMigration.Designer.cs">
-      <DependentUpon>201712041842328_EnumMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712200214488_FotoAnimal.cs" />
-    <Compile Include="Migrations\201712200214488_FotoAnimal.Designer.cs">
-      <DependentUpon>201712200214488_FotoAnimal.cs</DependentUpon>
+    <Compile Include="Migrations\201804052302143_initial.cs" />
+    <Compile Include="Migrations\201804052302143_initial.Designer.cs">
+      <DependentUpon>201804052302143_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -359,38 +320,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710231829452_AnyMigration.resx">
-      <DependentUpon>201710231829452_AnyMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710232151514_FotoSemNome.resx">
-      <DependentUpon>201710232151514_FotoSemNome.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710232202235_FotoContextAdicionada.resx">
-      <DependentUpon>201710232202235_FotoContextAdicionada.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710232206019_FotoAbstractEntity.resx">
-      <DependentUpon>201710232206019_FotoAbstractEntity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710232336208_FotoTipo.resx">
-      <DependentUpon>201710232336208_FotoTipo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711271904235_SolicitacaoAdocao&amp;Filo.resx">
-      <DependentUpon>201711271904235_SolicitacaoAdocao&amp;Filo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711272000321_AnimalEspeciePeso.resx">
-      <DependentUpon>201711272000321_AnimalEspeciePeso.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711272305319_SolicitacaoAdocao.resx">
-      <DependentUpon>201711272305319_SolicitacaoAdocao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711272334101_ComentarioDoacao.resx">
-      <DependentUpon>201711272334101_ComentarioDoacao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712041842328_EnumMigration.resx">
-      <DependentUpon>201712041842328_EnumMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712200214488_FotoAnimal.resx">
-      <DependentUpon>201712200214488_FotoAnimal.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804052302143_initial.resx">
+      <DependentUpon>201804052302143_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -411,7 +342,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49664</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49664/</IISUrl>
+          <IISUrl>http://localhost:49711/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

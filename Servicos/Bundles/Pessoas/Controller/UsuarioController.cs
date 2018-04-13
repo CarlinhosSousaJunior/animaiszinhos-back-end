@@ -3,6 +3,7 @@ using Servicos.Bundles.Pessoas.Resource;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Web.Http;
 
 namespace Servicos.Bundles.Pessoas.Controller
@@ -38,6 +39,33 @@ namespace Servicos.Bundles.Pessoas.Controller
         {
             _service.Add(usuario);
             return Request.CreateResponse(HttpStatusCode.OK, usuario);
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("api/usuarios/recuperarsenha/{id}")]
+        public HttpResponseMessage RecuperarSenha(int id)
+        {
+            var usuario = _service.GetOne(id);
+
+            string senha = new System.Random().Next().ToString();
+            usuario.Senha = senha;
+            _service.Update(usuario);
+ 
+            StringBuilder strBuilder = new StringBuilder();
+            strBuilder.Append($"Para acessar o sistema aniamiszinhos utilize a senha {senha}. ");
+            strBuilder.AppendLine("Não esqueça de alterar sua senha após o login");
+
+            try
+            {
+                EnviadorEmail.Enviar(usuario.Email, "Recuperação de senha Animaiszinhos", strBuilder.ToString());
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (System.Exception e)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, e.Message);
+            }
+                
         }
     }
 }
