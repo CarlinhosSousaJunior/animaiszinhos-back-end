@@ -197,7 +197,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Bundles\Animais\Resource\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -238,12 +237,14 @@
     <Compile Include="Bundles\Animais\Entity\Comentario.cs" />
     <Compile Include="Bundles\Animais\Entity\Doacao.cs" />
     <Compile Include="Bundles\Animais\Entity\SolicitacaoAdocao.cs" />
+    <Compile Include="Bundles\Animais\Resource\DoacaoService.cs" />
     <Compile Include="Bundles\Core\Authentication\SimpleAuthorizationServerProvider.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="Bundles\Core\Exception\LoginSenhaIncorretaException.cs" />
     <Compile Include="Bundles\Core\Repository\AbstractEditableEntityRepository.cs" />
     <Compile Include="Bundles\Core\Repository\AbstractEntityRepository.cs" />
     <Compile Include="Bundles\Core\Repository\AbstractRepository.cs" />
+    <Compile Include="Bundles\Core\Resource\IRestController.cs" />
     <Compile Include="Bundles\Core\Resource\IService.cs" />
     <Compile Include="Bundles\Core\Exception\SenhaExpiradaException.cs" />
     <Compile Include="Bundles\Pessoas\Controller\CidadeController.cs" />
@@ -256,6 +257,7 @@
     <Compile Include="Bundles\Pessoas\Controller\UsuarioController.cs" />
     <Compile Include="Bundles\Pessoas\Entity\Categoria.cs" />
     <Compile Include="Bundles\Pessoas\Entity\Foto.cs" />
+    <Compile Include="Bundles\Pessoas\Resource\EnviadorEmail.cs" />
     <Compile Include="Bundles\Pessoas\Resource\EstadoImporter.cs" />
     <Compile Include="Bundles\Pessoas\Resource\PessoaService.cs" />
     <Compile Include="Bundles\Pessoas\Resource\TelefoneService.cs" />
@@ -277,6 +279,10 @@
     <Compile Include="Migrations\201803151813027_FirstUse.cs" />
     <Compile Include="Migrations\201803151813027_FirstUse.Designer.cs">
       <DependentUpon>201803151813027_FirstUse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804130214273_DoacaoStatusParaString.cs" />
+    <Compile Include="Migrations\201804130214273_DoacaoStatusParaString.Designer.cs">
+      <DependentUpon>201804130214273_DoacaoStatusParaString.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -322,6 +328,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201803151813027_FirstUse.resx">
       <DependentUpon>201803151813027_FirstUse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804130214273_DoacaoStatusParaString.resx">
+      <DependentUpon>201804130214273_DoacaoStatusParaString.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

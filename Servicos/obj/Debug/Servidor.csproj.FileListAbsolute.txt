@@ -228,3 +228,4 @@ C:\Users\rudsonm\Source\Repos\animaiszinhos-back-end2\Servicos\obj\Debug\Servico
 C:\Users\rudsonm\Source\Repos\animaiszinhos-back-end2\Servicos\obj\Debug\Servicos.pdb
 C:\Users\rudsonm\Source\Repos\animaiszinhos-back-end2\Servicos\obj\Debug\Servicos.Migrations.FirstUse.resources
 C:\Users\rudsonm\Source\Repos\animaiszinhos-back-end2\Servicos\obj\Debug\Servidor.csproj.GenerateResource.Cache
+C:\Users\rudsonm\Source\Repos\animaiszinhos-back-end2\Servicos\obj\Debug\Servicos.Migrations.DoacaoStatusParaString.resources
